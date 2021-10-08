@@ -1,0 +1,30 @@
+{% set wysiwyg_columns = content.wysiwyg_field %}
+
+{% if content.heading_type %}
+  {% set heading_type = content.heading_type %}
+{% else %}
+  {% set heading_type = 2 %}
+{% endif %}
+
+<section class="wysiwyg-field {{ content.custom_classes }}">
+  <div class="container">
+    <div class="row">
+      {% if content.overall_wysiwyg_headline %}
+        <h{{heading_type}} class="col-sm-12 col-lg-10 mb-3" id="{{ content.overall_wysiwyg_headline | lower | sanitize }}">{{ content.overall_wysiwyg_headline }}</h{{heading_type}}>
+      {% endif %}
+      {% for wysiwyg in wysiwyg_columns %}
+        <div class="{{ wysiwyg.layout }} mb-3">
+          {% if wysiwyg.headline %}
+            <h3 class="ut-h3">{{ wysiwyg.headline }}</h3>
+          {% endif %}
+
+          {% if wysiwyg.content %}
+            <div class="wysiwyg-content">
+              {{ wysiwyg.content }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

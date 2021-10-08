@@ -1,0 +1,3 @@
+*.min.css
+/dist/css/elegant.css
+/dist/css/elegant.min.css

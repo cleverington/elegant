@@ -1,0 +1,223 @@
+{
+    "key": "group_61215bee420ce",
+    "title": "CPT: Events",
+    "fields": [
+        {
+            "key": "field_61215bf6cc024",
+            "label": "Event Contact",
+            "name": "event_contact",
+            "type": "wysiwyg",
+            "instructions": "Enter contact information for your event",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_61215c2acc025",
+            "label": "Event Image",
+            "name": "event_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61215f2bcc028",
+            "label": "Event Date and Time",
+            "name": "event_date_and_time",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_61215fc487b80",
+                    "label": "Show End Date",
+                    "name": "show_end_date",
+                    "type": "true_false",
+                    "instructions": "Check if Event has an <em>End Date<\/em> or <em>End Time<\/em>.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_61215dc5cc026",
+                    "label": "Event Start Date",
+                    "name": "event_start_date",
+                    "type": "date_picker",
+                    "instructions": "Enter the 'Start Date' of the event.<br><br>\r\n<strong>Note: <\/strong>The <em>Start Date<\/em> must be before the <em>End Date<\/em>",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "m\/d\/Y",
+                    "return_format": "m\/d\/Y",
+                    "first_day": 0
+                },
+                {
+                    "key": "field_612160e894125",
+                    "label": "Event Start Time",
+                    "name": "event_start_time",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                },
+                {
+                    "key": "field_61215f19cc027",
+                    "label": "Event End Date",
+                    "name": "event_end_date",
+                    "type": "date_picker",
+                    "instructions": "Enter the 'End Date' of the event.<br><br>\r\n<strong>Note: <\/strong>The <em>Start Date<\/em> must be before the <em>End Date<\/em>",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61215fc487b80",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "m\/d\/Y",
+                    "return_format": "m\/d\/Y",
+                    "first_day": 0
+                },
+                {
+                    "key": "field_6121611994126",
+                    "label": "Event End Time",
+                    "name": "event_end_time",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61215fc487b80",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:i a"
+                }
+            ]
+        },
+        {
+            "key": "field_612160bf94124",
+            "label": "Event Description",
+            "name": "event_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6121614f94127",
+            "label": "External URL",
+            "name": "external_url",
+            "type": "url",
+            "instructions": "Please include the URL of the event.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "discussion",
+        "comments"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1632010607
+}

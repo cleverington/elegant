@@ -1,0 +1,27 @@
+<section class="ut-header p-0 position-relative">
+  <div class="container py-3 pt-md-4 pb-md-3">
+    <div class="ut-header-wrapper d-md-block p-0">
+      <div class="ut-header--column ut-header--primary-logo">
+        <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+          <img class="img-fluid ut-logo--main" src="{{site.theme.link}}/dist/images/logos/utexas-primary-horizontal-logo.svg" alt="The University of Texas at Austin">
+          <h1 class="ut-sr-only">Texas Connect</h1>
+        </a>
+
+      </div>
+      <button class="ut-btn ut-btn--toggle" aria-controls="main-menu" aria-expanded="false" id="js-nav-toggle" href="#ut-main_menu-wrapper"><span class="hamburger"></span>MENU</button>
+    </div>
+    <div id="ut-main_menu-wrapper">
+      <div class="header-flex-wrapper">
+        <div class="ut-header--column text-lg-right">
+          {% if enable_announcement_button == 1 %}
+            <a href="{{ announcement_button.url }}" class="ut-btn ut-btn--announcement-cta" target="{{ announcement_button.target }}">{{ announcement_button.title }}</a>
+          {% endif %}
+          <!-- Search may be omitted, if appropriate to the site -->
+          {% include 'partial/searchform.twig' %}
+        </div>
+        <!-- Main navigation may be omitted, if appropriate to the site -->
+        {% include 'partial/navigation.twig' with { 'nav_items': primary_menu.get_items } %}
+      </div>
+    </div>
+  </div>
+</section>

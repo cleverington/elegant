@@ -1,0 +1,88 @@
+{% set tab_group = content %}
+{% set overall_headline = content.overall_headline %}
+{% set heading_type = content.heading_type %}
+{% set entry_text = content.entry_text %}
+{% set first_field = tab_group.tab_box|first %}
+
+{% if heading_type %}
+  {% set container_heading = ( content.heading_type + 1 ) %}
+{% else %}
+  {% set container_heading = 3 %}
+{% endif %}
+
+<section class="tab-box {{ content.custom_classes }}">
+  <div class="container my-5">
+
+    {% if overall_headline %}
+      <h{{ heading_type }} class="mb-3" id="{{ overall_headline | lower | sanitize }}">{{ overall_headline }}</h{{ heading_type }}>
+    {% endif %}
+
+    {% if entry_text %}
+      <p class="mb-3">{{ entry_text }}</p>
+    {% endif %}
+
+    <ul class="nav nav-tabs nav-fill d-none d-md-flex" id="utTabs" role="tablist">
+      {% for tab_box in tab_group.tab_box %}
+        {% if tab_box.tab_title == first_field.tab_title %}
+          {% set firstTab = 'active' %}
+        {% else %}
+          {% set firstTab = NULL %}
+        {% endif %}
+
+        <li class="nav-item" role="presentation">
+          <a class="nav-link py-3 {{ firstTab }}" id="{{tab_box.tab_title|sanitize}}-tab" data-toggle="tab" href="#{{tab_box.tab_title|sanitize }}" role="tab" aria-controls="{{tab_box.tab_title|sanitize }}" aria-selected="false">{{ tab_box.tab_title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+      {% for tab_box in tab_group.tab_box %}
+        {% if tab_box.image %}
+          {% set image = Image(tab_box.image) %}
+          {% set columnLayout = 'col-12 col-md-6'%}
+        {% else %}
+          {% set columnLayout = 'col-12'%}
+        {% endif %}
+
+        {% if tab_box.tab_title == first_field.tab_title %}
+          {% set contentTab = 'show active' %}
+        {% else %}
+          {% set contentTab = NULL %}
+        {% endif %}
+
+        <div class="tab-pane fade {{ contentTab }}" id="{{tab_box.tab_title|sanitize }}" role="tabpanel" aria-labelledby="{{tab_box.tab_title|sanitize }}-tab">
+          <div class="panel panel-default">
+            <div class="panel-heading d-block d-md-none">
+              <h4 class="panel-title m-0">
+                <a class="d-block p-3" data-toggle="collapse" data-parent=".tab-pane" href="#collapse-{{tab_box.tab_title|sanitize }}">{{ tab_box.tab_title }} <svg role="img" aria-labelledby="title"><use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#ut-close"></use></svg></a>
+              </h4>
+            </div>
+
+            <div id="collapse-{{tab_box.tab_title|sanitize }}" class="panel-collapse collapse in">
+              <div class="panel-body p-5">
+                <div class="row">
+                  <div class="{{ columnLayout }}">
+                    {% if tab_box.headline %}
+                      <h3>{{ tab_box.headline }}</h3>
+                    {% endif %}
+                    {{ tab_box.wysiwyg }}
+                  </div>
+                  {% if tab_box.image %}
+                    <div class="col-12 col-md-6 text-center">
+                      <img src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="{{ image.img_sizes }}" class="ut-img--fluid mb-5" alt="{{ image.alt ? image.alt : image.title }}" />
+                      {% if tab_box.image_button %}
+                        <a target="{{ tab_box.image_button.target }}" href="{{ tab_box.image_button.url }}" title="{{ tab_box.image_button.title }}" class="ut-btn ut-btn--tab-cta">{{ tab_box.image_button.title }} <svg role="img" aria-hidden="true"><use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#ut-chevron-right"></use></svg></a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</section>

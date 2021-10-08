@@ -1,0 +1,349 @@
+{
+    "key": "group_5ee14e18a5ba3",
+    "title": "Flexible Content",
+    "fields": [
+        {
+            "key": "field_5ee14e6990cc2",
+            "label": "Content",
+            "name": "flex_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5ee7cf47a9602": {
+                    "key": "layout_5ee7cf47a9602",
+                    "name": "media_showcase",
+                    "label": "Media Showcase",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ee7cf4ea9603",
+                            "label": "Media Showcase",
+                            "name": "media_showcase",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ee0e2f950d84"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5ef60a0fe4157",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ee7d3eb85f09": {
+                    "key": "layout_5ee7d3eb85f09",
+                    "name": "promo_repeater",
+                    "label": "Promo Repeater",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ee7d40e85f0a",
+                            "label": "Promo Repeater",
+                            "name": "promo_repeater",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5edfee556ab92"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5ef60a34e4158",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "Add custom class to style this component",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ee9073719732": {
+                    "key": "layout_5ee9073719732",
+                    "name": "tab_box",
+                    "label": "Tab Box",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ee9073c19733",
+                            "label": "Tab Box",
+                            "name": "tab_box",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ee0e0a3a86f7"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5ef60a40e4159",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "Add custom class to style this component",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ee15fe12b51e": {
+                    "key": "layout_5ee15fe12b51e",
+                    "name": "wysiwyg_columns",
+                    "label": "WYSIWYG Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ee15fec2b51f",
+                            "label": "WYSIWYG",
+                            "name": "wysiwyg",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5edfecd996838"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_5ef60a47e415a",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "Add custom class to style this component",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6091b0adc0c36": {
+                    "key": "layout_6091b0adc0c36",
+                    "name": "feed_block",
+                    "label": "Feed Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6091b0adc0c37",
+                            "label": "Feed Block",
+                            "name": "feed_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5fc6670a210c2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6091b0adc0c38",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "Add custom class to style this component",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_612ee65914cc6": {
+                    "key": "layout_612ee65914cc6",
+                    "name": "hero_area",
+                    "label": "Hero Area",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_612ee65914cc7",
+                            "label": "Hero Area",
+                            "name": "hero_area",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5ee0de9a854fd"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_612ee65914cc8",
+                            "label": "Custom classes",
+                            "name": "custom_classes",
+                            "type": "text",
+                            "instructions": "Add custom class to style this component",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Content",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments",
+        "categories",
+        "tags"
+    ],
+    "active": false,
+    "description": "",
+    "modified": 1632026717
+}

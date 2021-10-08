@@ -1,0 +1,10 @@
+<div class="ut-search_bar">
+  <label for="s" class="ut-sr-only" id="desktopSearchLabel">Search</label>
+  <form action="{{ site.theme.link }}" method="get" role="search">
+    <input type="search" value="{{ function('get_search_query') }}" name="s" placeholder="Search" class="input--search" title="Search" aria-labelledby="desktopSearchLabel">
+    <svg class="svg search" viewBox="0 0 26 28">
+      <use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#ut-search"></use>
+    </svg>
+  </form>
+</div>
+</div>

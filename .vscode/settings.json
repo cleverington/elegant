@@ -1,0 +1,11 @@
+{
+	"phpcbf.enable": true,
+	"phpcbf.documentFormattingProvider": false,
+	"phpcbf.onsave": false,
+	"phpcbf.debug": true,
+	"prettier.packageManager": "yarn",
+	"prettier.quoteProps": "preserve",
+	"prettier.requireConfig": true,
+	"prettier.trailingComma": "all",
+	"editor.formatOnSave": false,
+}

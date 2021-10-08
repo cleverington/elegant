@@ -1,0 +1,23 @@
+<section class="ut-hero hero--half-n-half mb-5 ut-block-{{ id_of_block }}">
+  {% include 'inc/Block/Hero/views/hero-area/hero-area-styles.twig' %}
+  <div class="hero-content">
+    <div class="hero-img">
+      <span class="ut-sr-only">{{ image.alt }}</span>
+    </div>
+    <div class="hero-callout">
+      <div class="text-box">
+        <div class="hero-headline">
+          <h1 class="ut-headline--poster mb-2">{{ hero_area.headline ? hero_area.headline : post.title }}</h1>
+        </div>
+        {% if hero_area.subheader %}
+          <span class="hero-subhead ut-h3">{{ hero_area.subheader }}</span>
+        {% endif %}
+      </div>
+      {% if hero_area.cta_button %}
+        <div class="hero-cta">
+          <a href="{{ hero_area.cta_button.url }}" title="{{ hero_area.cta_button.title }}" class="ut-btn--secondary" target="{{ hero_area.cta_button.target }}">{{ hero_area.cta_button.title }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

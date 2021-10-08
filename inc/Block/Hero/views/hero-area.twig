@@ -1,0 +1,26 @@
+{% set hero_area = content.hero_area %}
+
+{% if hero_area.hero_image %}
+  {% set image = Image(hero_area.hero_image) %}
+{% endif %}
+
+{% if image %}
+
+  {% if hero_area.layout == 'layout_3' %}
+    {% include 'inc/Block/Hero/views/hero-area/hero-area-3.twig' %}
+  {% endif %}
+
+  {% if hero_area.layout == 'layout_4' %}
+    {% include 'inc/Block/Hero/views/hero-area/hero-area-4.twig' %}
+  {% endif %}
+
+  {% if hero_area.layout == 'layout_5' %}
+    {% include 'inc/Block/Hero/views/hero-area/hero-area-5.twig' %}
+  {% endif %}
+
+  {% if not is_front_page and enable_breadcrumbs == 1 %}
+    {% include 'partial/breadcrumbs.twig' %}
+  {% endif %}
+
+{% endif %}
+

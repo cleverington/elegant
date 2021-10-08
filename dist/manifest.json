@@ -1,0 +1,7 @@
+{
+  "main.css": "dist/css/main.css",
+  "main.js": "dist/main.js",
+  "icons.svg": "dist/icons.svg",
+  "main.css.map": "dist/css/main.css.map",
+  "main.js.map": "dist/main.js.map"
+}

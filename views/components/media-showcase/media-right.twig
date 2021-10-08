@@ -1,0 +1,40 @@
+{# Set Wrapper Utility Class #}
+{% if 'media_right' == media_area.layout %}
+	{% set media_class = 'col-sm-12 col-md-4 offset-md-1 col-lg-4 offset-lg-1' %}
+	{% set wysiwyg_class = 'col-sm-12 col-md-5 mb-4 mb-md-0 offset-md-1 col-lg-5 offset-lg-1' %}
+{% elseif 'media_right_third' == media_area.layout %}
+	{% set media_class = 'col-sm-12 col-md-5' %}
+	{% set wysiwyg_class = 'col-sm-12 col-md-7 mb-4 mb-md-0' %}
+{% endif %}
+
+<section class="media-showcase py-4 {{ content.custom_classes }}">
+	<div class="container">
+		{% if headline %}
+			<div class="row">
+				<div class="col-12">
+					<h{{heading_type}} class="mb-3" id="{{ headline | lower | sanitize }}">{{ headline }}</h{{heading_type}}>
+				</div>
+			</div>
+		{% endif %}
+		<div class="row {{ media_area.wysiwyg_content_alignment }}">
+			<div class="{{ wysiwyg_class }}">
+				<div class="media-showcase__content {{ media_area.cta_button ? 'mb-4' }} {{ media_area.wysiwyg_layout }}">
+					{{ media_area.wysiwyg }}
+				</div>
+
+				{% if media_area.cta_button %}
+					<a target="{{ media_area.cta_button.target }}" href="{{ media_area.cta_button.url }}" title="{{ media_area.cta_button.title }}" class="ut-btn mb-0">{{ media_area.cta_button.title }}</a>
+				{% endif %}
+			</div>
+			<div class="media-showcase__media {{ media_class }}">
+				{% if media_area.video %}
+					<div class="embed-responsive embed-responsive-16by9">
+						{{ media_area.video }}
+					</div>
+				{% else %}
+					<img src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="{{ image.img_sizes }}" class="ut-img--fluid" alt="{{ image.alt }}" />
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

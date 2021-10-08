@@ -1,0 +1,28 @@
+<section class="ut-hero hero--blue-bar mb-5 ut-block-{{ id_of_block }}">
+  <div class="container">
+    <div class="row">
+      <div class="hero-content">
+        {% if image %}
+          <div class="hero-img">
+            <img src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="{{ image.img_sizes }}" class="ut-img--fluid" alt="{{ image.alt ? image.alt : image.title }}" />
+          </div>
+        {% endif %}
+        <div class="hero-callout">
+          <div class="text-box">
+            <div class="hero-headline">
+              <h1 class="mb-2 text-white">{{ hero_area.headline ? hero_area.headline : post.title }}</h1>
+            </div>
+            {% if hero_area.subheader %}
+              <span class="hero-subhead ut-h3">{{ hero_area.subheader }}</span>
+            {% endif %}
+          </div>
+          {% if hero_area.cta_button %}
+            <div class="hero-cta">
+              <a target="{{ hero_area.cta_button.target }}" href="{{ hero_area.cta_button.url }}" title="{{ hero_area.cta_button.title }}" class="ut-btn--hero">{{ hero_area.cta_button.title }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

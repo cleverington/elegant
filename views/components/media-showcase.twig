@@ -1,0 +1,23 @@
+{% set media_showcase = content.media_showcase_item %}
+{% set headline = content.headline %}
+{% set heading_type = content.headline_toggle %}
+{% set subheading = content.subheading %}
+
+{# Set Wrapper Utility Class #}
+{% if 'default' != media_showcase.wysiwyg_layout %}
+	{% set wrapper_class = media_showcase.wysiwyg_layout %}
+{% else %}
+	{% set wrapper_class = '' %}
+{% endif %}
+
+{% for media_area in media_showcase %}
+	{% set image = Image(media_area.image) %}
+
+	{% if media_area.layout == 'media_left' or media_area.layout == 'media_left_third' %}
+		{% include 'components/media-showcase/media-left.twig' %}
+	{% elseif media_area.layout == 'media_right' or media_area.layout == 'media_right_third' %}
+		{% include 'components/media-showcase/media-right.twig' %}
+	{% else %}
+		{% include 'components/media-showcase/'~media_area.layout|replace({'_': '-'})~'.twig' ignore missing %}
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,190 @@
+{
+    "key": "group_5fc6670a210c2",
+    "title": "Component: Feed Blocks",
+    "fields": [
+        {
+            "key": "field_60aff8a47a19e",
+            "label": "Block Title",
+            "name": "block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60aff5c2f0641",
+            "label": "Layout Selection",
+            "name": "layout_selection",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Three Column",
+                "four_column": "Four Column",
+                "showcase": "Big One, Small Two"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60aff8b77a19f",
+            "label": "Hide Block Title",
+            "name": "hide_block_title",
+            "type": "true_false",
+            "instructions": "Block title is displayed by default.<br>\r\nEnable to <em>hide<\/em> the Feed Block title.<br><br>\r\n\r\n<strong>Block Title is still a required field, for screen-reader instruction.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60b7a61d8f190",
+            "label": "Featured Image Layout",
+            "name": "featured_image_layout",
+            "type": "select",
+            "instructions": "Choose the Image Layout for the block<br>\r\n<strong>Full Height<\/strong> - roughly 255px by 328px, Three Columns wide\r\n<strong>Landscape<\/strong> - roughly 350px by 234px, Four Columns wide<br><br>\r\n<strong>Note:<\/strong> Big One, Small Two does not use.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60aff5c2f0641",
+                        "operator": "!=",
+                        "value": "showcase"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Full Height",
+                "landscape": "Landscape"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_60aff23ff0640",
+            "label": "Show Tag Area",
+            "name": "show_tag_area",
+            "type": "true_false",
+            "instructions": "Check to show the <em>Post Type<\/em> for each of the stories.<br><br>\r\n\r\n<em>Examples:<\/em> Happens Here, Feature, Letters from the head of Faculty Council, Spotlight, etc.<br>\r\n<strong>Note:<\/strong> The 'Meet Your Colleagues' post does <em>not<\/em> have an available 'Post Type'.<br>\r\n<strong>Second Note:<\/strong> This field is only currently available for the 'Three Column' layout.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60aff5c2f0641",
+                        "operator": "==",
+                        "value": "default"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fc66713bbd21",
+            "label": "Feed Block",
+            "name": "feed_block",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5fc6a176dc94f",
+            "label": "Group Link",
+            "name": "group_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/feed-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1632022347
+}

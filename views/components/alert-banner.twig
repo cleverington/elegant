@@ -1,0 +1,29 @@
+<section class="alert-banner py-3 d-none" id="alert-banner" role="banner">
+  <div class="container">
+    <div class="row no-gutters d-flex justify-content-between align-items-lg-center">
+      <div class="col-10 order-1 col-lg-7">
+        <p id="alert-banner__text" class="m-lg-0 font-weight-bold">
+          {% if banner_icon|default %}
+            <svg role="img"><use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#{{ banner_icon }}"></use></svg>
+            {{ banner_message }}
+          {% elseif banner_icon == 'none' %}
+            {{ banner_message }}
+          {% endif %}
+        </p>
+      </div>
+      {% if banner_buttons|default %}
+        <div class="col-12 col-lg order-3 order-lg-2 text-lg-right">
+          {% for button in banner_buttons %}
+            <a href="{{ button.button_link.url }}" class="ut-btn mb-lg-0" target="{{ button.button_link.target }}">{{ button.button_link.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="col-1 order-2 order-lg-3 text-center">
+        <button id="alert-banner__close-btn" class="alert-banner__close-btn ml-1 ml-lg-4"  aria-controls="alert-banner" aria-label="Close banner">
+          <svg role="img"><use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#ut-close"></use></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

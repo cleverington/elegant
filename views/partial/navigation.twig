@@ -1,0 +1,16 @@
+<!-- Main navigation may be omitted, if appropriate to the site -->
+{% if primary_menu %}
+  <nav id="block-accessible-main-menu" role="navigation">
+      <ul class="main-menu__list nav-menu nav">
+        {% for nav_item in nav_items %}
+          <li class="main-menu__list-item {% if nav_item.children %}menu-item-has-children dropdown{% endif %}">
+            <a class="main-menu__link" href="{{ nav_item.link }}" target="{{ nav_item.target }}" {% if nav_item.children %}id="navbarDropdown{{ nav_item.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{% endif %}>{{ nav_item.title }}</a>
+            {% if nav_item.children %}
+              <i class="icon subnav-trigger" tabindex="0"><svg class="svg angle-down" viewBox="0 0 18 28"><use xlink:href="{{ site.theme.link }}/dist/icons/symbol-defs.svg#ut-angle-down"></use></svg></i>
+              {% include 'partial/menu-children.twig' with { "children": nav_item.children } %}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+  </nav>
+{% endif %}

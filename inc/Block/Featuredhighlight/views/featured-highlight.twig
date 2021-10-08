@@ -1,0 +1,76 @@
+{#
+/**
+* @file
+* Theme implementation for a WordPress 'Featured Highlight'.
+*
+ * Available Variables:
+ * - id_of_block: int - Counter for Flex-Content block-order.
+ * - featured_highlight
+ *   - layout: string - Chosen layout. Options: [ full_width, page_width ]
+ *   - media_option: string - Chosen Media Option.
+ *      Options: [ no_media, image, video ]
+ *   - featured_image: object (media) - Image object for Highlight item.
+ *     - alt: string - Alt Text for Image
+ *     - title: string - Title text for Image
+ *   - featured_video: object (oEmbed) - Video embed from Vimeo or YouTube.
+ *   - headline: string - Optional H2 based text headline
+ *   - subheader: string - Optional text subheadline.
+ *   - content: wysiwyg - Optional wysiwyg content editor.
+ *   - cta_button: object (link)
+ *     - url: string - Hyperlink url of Hero-CTA button.
+ *     - title: string - Title of Hero-CTA button
+ *     - target: string - Destination for the Hero-CTA button.
+ *	   -
+ *  - group_link: link - Overall 'link' field for the Component.
+ *  - custom_classes: string - Overall 'CSS Class' field for Component.
+*/
+#}
+{% set content = content.featured_highlight %}
+
+{% if content.featured_image %}
+  {% set image = Image(content.featured_image) %}
+{% endif %}
+
+{% set content_layout = 'col-sm-12 col-md-6 col-lg-7 offset-lg-2' %}
+
+<section class="featured-highlight {{ content.layout }} mb-1 ut-block-{{ id_of_block }}">
+  <div class="d-flex flex-wrap my-2">
+    <div class="col-sm-12 mb-3 d-flex">
+        {% if 'video' == content.media_option %}
+          <div class="col-sm-12 col-md-6 col-lg-3 offset-lg-1">
+            <div class="embed-responsive embed-responsive-16by9">
+              {{ content.featured_video }}
+            </div>
+          </div>
+				{% elseif 'image' == content.media_option %}
+          <div class="col-sm-12 col-md-6 col-lg-3 offset-lg-1">
+            <img src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="{{ image.img_sizes }}" class="ut-img--fluid" alt="{{ image.alt }}" />
+          </div>
+        {% else %}
+          {% set content_layout = 'col-sm-12' %}
+				{% endif %}
+
+      <div class="{{ content_layout }}">
+        {# Headline #}
+        {% if content.headline %}
+          <h{{ content.heading }} class="mb-0 ut-h3" id="{{ headline | lower | sanitize }}">{{ content.headline }}</h{{ content.heading }}>
+          {% if content.subheader %}
+            <p role="doc-subtitle" class="mb-0 ut-h4">{{ content.subheader }}</p>
+          {% endif %}
+        {% endif %}
+
+        {# WYSIWYG Editor #}
+        {% if content.content %}
+          {{ content.content }}
+        {% endif %}
+
+        {# CTA Button Group #}
+        {% if content.cta_button_group %}
+          {% for cta_button_group in content.cta_button_group %}
+            <a target="{{ cta_button_group.cta_button.target }}" href="{{ cta_button_group.cta_button.url }}" title="{{ cta_button_group.cta_button.title }}" class="ut-btn">{{ cta_button_group.cta_button.title }}</a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

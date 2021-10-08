@@ -1,0 +1,113 @@
+// ----------
+// Utility Classes
+// ----------
+
+$numbers: (
+	x25: 25%,
+	x50: 50%,
+	x-25: -25%,
+	x-50: -50%
+);
+
+// ----------
+// Colors
+
+// Generate Color Utility Classes
+$ut-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$ut-colors: map-merge(
+	(
+		'ut-burntorange': $ut-burntorange,
+		'ut-charcoal': $ut-charcoal,
+		'ut-white': $ut-white,
+		'ut-bluebonnet': $ut-bluebonnet,
+		'ut-turquoise': $ut-turquoise,
+		'ut-tutlepond': $ut-turtlepond,
+		'ut-cactus': $ut-cactus,
+		'ut-shade': $ut-shade,
+		'ut-tangerine': $ut-tangerine,
+		'ut-limestone': $ut-limestone,
+		'ut-sunshine': $ut-sunshine,
+		'ut-bluebonnet-s20': $ut-bluebonnet--s20,
+		'ut-turquoise-s20': $ut-turquoise--s20,
+		'ut-shade-t20': $ut-shade--t20,
+		'ut-shade-t40': $ut-shade--t40,
+		'ut-shade-t60': $ut-shade--t60,
+		'ut-shade-s20': $ut-shade--s20,
+		'ut-shade-s40': $ut-shade--s40,
+		'ut-shade-s60': $ut-shade--s60,
+		'ut-tutlepond-s20': $ut-turtlepond--s20,
+		'ut-cactus-s20': $ut-cactus--s20,
+		'ut-burntorange-s10': $ut-burntorange--s10,
+		'ut-burntorange-s20': $ut-burntorange--s20,
+		'ut-charcoal-t10': $ut-charcoal--t10,
+		'ut-charcoal-t15': $ut-charcoal--t15,
+		'ut-charcoal-t20': $ut-charcoal--t20,
+		'ut-charcoal-t40': $ut-charcoal--t40,
+		'ut-charcoal-t60': $ut-charcoal--t60,
+		'ut-charcoal-t80': $ut-charcoal--t80,
+		'ut-charcoal-s40': $ut-charcoal--s40,
+		'ut-limestone-t20': $ut-limestone--t20,
+		'ut-limestone-t40': $ut-limestone--t40,
+		'ut-limestone-t60': $ut-limestone--t60,
+		'ut-limestone-s20': $ut-limestone--s20,
+		'ut-limestone-s40': $ut-limestone--t40,
+		'ut-limestone-s60': $ut-limestone--s60,
+	),
+	$ut-colors
+);
+
+// Create text-variant colors.
+@each $color, $value in $ut-colors {
+	.text-#{$color} {
+		color: $value;
+	}
+}
+
+// Create offset-background-variant colors.
+@each $name, $number in $numbers {
+	.offset-bg-#{$name} {
+		&::before {
+			top: $number;
+		}
+	}
+}
+
+// Create offset-background-variant colors.
+@each $background, $color in $ut-colors {
+	.bg-#{$background} {
+		background-color: $color;
+	}
+}
+
+// ----------
+// Fonts
+.lead-serif {
+	font-size: 1.3125rem;
+	font-weight: 300;
+
+	p {
+		font-size: 1.3125rem;
+		font-weight: 300;
+	}
+}
+
+.lead-sans-serif {
+	font-size: 1.25rem;
+	font-weight: 300;
+
+	p {
+		font-size: 1.25rem;
+		font-weight: 300;
+	}
+}
+
+.ut-serif {
+	font-family: $ut-font--serif;
+	font-size: 1.0625rem;
+}
+
+.ut-sans-serif {
+	font-family: $ut-font--sans;
+	font-size: 1rem;
+}

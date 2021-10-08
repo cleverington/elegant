@@ -1,0 +1,70 @@
+{
+    "key": "group_6121736fdf6f3",
+    "title": "CPT: Research Labs",
+    "fields": [
+        {
+            "key": "field_6121737684ed7",
+            "label": "Site Links",
+            "name": "site_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6121738684ed8",
+                    "label": "Site Link",
+                    "name": "site_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "research_labs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "comments",
+        "author",
+        "format",
+        "page_attributes",
+        "categories",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1632010619
+}

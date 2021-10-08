@@ -1,0 +1,68 @@
+//
+// Variables and Variable Overrides
+// See ./../node_modules/bootstrap/scss
+// See ./../node_modules/@utexas/tds/src
+//
+
+// Bootstrap overrides
+// ----------
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Color Overrides
+// ----------
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+$orange: $ut-burntorange;
+$yellow: $ut-sunshine;
+
+// Create grayscale
+$primary:                   $ut-burntorange;
+$gray-dark:                 #282828;
+$gray:                      $ut-charcoal;
+$gray-light:                #666e75;
+$gray-lighter:              #e6e6e6;
+$gray-lightest:             #f7f7f9;
+$blue:                    $ut-bluebonnet;
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $ut-burntorange;
+$brand-warning:             $ut-sunshine;
+
+// ----------
+// TDS Font Family Variables
+$font-size-base: 1rem; // Bootstrap override
+$ut-base-font-size: 1rem !default;
+$ut-font--serif: georgia, serif;
+$ut-font--sans: arial, helvetica, sans-serif;
+
+$ut-font--code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+$ut-font--pre: 'Courier 10 Pitch', courier, monospace;
+
+// ----------
+// Bootstrap Fonts
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: $ut-font--sans;
+$font-family-monospace: $ut-font--serif;
+$font-family-base: $ut-font--serif;
+
+// Grid breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 600px,
+	md: 900px,
+	lg: 1200px,
+	xl: 1600px,
+);
+
+// Grid containers
+$container-max-widths: (
+	sm: 840px,
+	md: 1000px,
+	lg: 1140px,
+	xl: 1500px,
+);
+
+// DISABLE ROUNDED CORDERS
+$enable-rounded: false;

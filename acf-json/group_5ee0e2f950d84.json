@@ -1,0 +1,260 @@
+{
+    "key": "group_5ee0e2f950d84",
+    "title": "Component: Media Showcase",
+    "fields": [
+        {
+            "key": "field_5ef35fb522bac",
+            "label": "Headline",
+            "name": "headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ef68f5073f57",
+            "label": "Headline Toggle",
+            "name": "headline_toggle",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Heading 1",
+                "2": "Heading 2",
+                "3": "Heading 3",
+                "4": "Heading 4",
+                "5": "Heading 5",
+                "6": "Heading 6"
+            },
+            "default_value": 2,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ee0f0f069e2b",
+            "label": "Media Showcase Item",
+            "name": "media_showcase_item",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5ee0e2ffa62e5",
+            "min": 1,
+            "max": 3,
+            "layout": "block",
+            "button_label": "Add Media Showcase Item",
+            "sub_fields": [
+                {
+                    "key": "field_5ee0e2ffa62e5",
+                    "label": "Layout",
+                    "name": "layout",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "media_left": "Media Left",
+                        "media_right": "Media Right",
+                        "media_left_third": "Media Left - 1\/3",
+                        "media_right_third": "Media Right - 1\/3"
+                    },
+                    "default_value": "media_left",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ee0e337a62e7",
+                    "label": "Video",
+                    "name": "video",
+                    "type": "oembed",
+                    "instructions": "Optional Video field.\r\n\r\nNote: If 'Video' field is populated, Image field will not load.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_5ee0f1fb2aa2e",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Optional Image field.\r\n\r\nNote: If 'Video' field is populated, Image field will not load.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5ef373d250d33",
+                    "label": "WYSIWYG Theming",
+                    "name": "wysiwyg_layout",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "default": "Default",
+                        "lead": "Bootstrap 'lead' Typography"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ef3ffaaf88e2",
+                    "label": "WYSIWYG Content Alignment",
+                    "name": "wysiwyg_content_alignment",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "align-items-start": "Align Items Top (Default)",
+                        "align-items-center": "Align Items Center",
+                        "align-items-end": "Align Items Bottom"
+                    },
+                    "default_value": "align-items-start",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ee0e351a62e8",
+                    "label": "WYSIWYG",
+                    "name": "wysiwyg",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5ee3abee1464e",
+                    "label": "CTA Button",
+                    "name": "cta_button",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": false,
+    "description": "",
+    "modified": 1632012779
+}

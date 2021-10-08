@@ -1,0 +1,42 @@
+{% if posts.pagination.pages is not empty %}
+    <nav class="pagination-block">
+        <ul class="ut-pagination pagination">
+
+            {# Pages #}
+            {% for page in posts.pagination.pages %}
+                {% if page.link %}
+                    <li>
+                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                    </li>
+                {% else %}
+                    <li class="current">
+                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {# Next #}
+            {% if posts.pagination.next %}
+                <li class="next">
+                    <a href="{{ posts.pagination.next.link }}">next ›</a>
+                </li>
+            {% else %}
+                <li class="next disabled">
+                    <a href="" disabled>next ›</a>
+                </li>
+            {% endif %}
+
+            {# Last #}
+            {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
+                <li class="last">
+                    <a href="{{ posts.pagination.pages|last.link }}">last »</a>
+                </li>
+            {% else %}
+                <li class="last disabled">
+                    <a href="" disabled>last »</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+{% endif %}

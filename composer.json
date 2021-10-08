@@ -1,0 +1,41 @@
+{
+	"name": "cleverington/elegant",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Charles Leverington",
+			"email": "cleverington@taoti.com"
+		}
+	],
+	"type": "wordpress-theme",
+	"require": {
+		"timber/timber": "^1.9",
+		"symfony/dotenv": "^4.3",
+		"guzzlehttp/guzzle": "^6.5"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.5",
+		"wp-coding-standards/wpcs": "dev-master",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"phpcompatibility/php-compatibility": "*",
+		"phpcompatibility/phpcompatibility-wp": "*"
+	},
+	"prefer-stable": true,
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": ["type:wordpress-plugin"]
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Elegant\\": "inc/"
+		},
+		"files": ["./inc/helpers.php"]
+	},
+	"scripts": {
+		"format": "phpcbf --standard=phpcs.xml --report-summary --report-source",
+		"lint": "phpcs --standard=phpcs.xml --report-summary --report-source",
+		"post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/wp-coding-standards/wpcs",
+  	"post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/wp-coding-standards/wpcs"
+	}
+}

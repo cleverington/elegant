@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+/node_modules/
+/vendor/
+/wpcs/
+
+_dist/
+static/fonts/
+static/images/
+dist/css/border-beagle.css

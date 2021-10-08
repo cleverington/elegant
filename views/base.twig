@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+  {% block html_head_container %}
+
+    {% include 'partial/html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    <!-- Google Tag Manager -->
+      {% include 'partial/gtm.twig' %}
+    <!-- End Google Tag Manager -->
+  {% endblock %}
+
+  <body class="{{body_class}}" data-template="base.twig">
+
+    <!-- Google Tag Manager (noscript) -->
+      {% include 'partial/gtm-noscript.twig' %}
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a class="visually-hidden-focusable" href="#content">{{ _e( 'Skip to content') }}</a>
+    {% if enable_alert_banner == 1 %}
+      {% include "components/alert-banner.twig" %}
+    {% endif %}
+    {% include 'components/brandbar.twig' %}
+
+    <header class="header" >
+      {% block header %}
+        {% include 'partial/header.twig' with {"menu_item": menu.get_items} %}
+      {% endblock %}
+
+    </header>
+
+    <section id="content" role="main" class="content-wrapper">
+      <div class="wrapper {{sidebar_class}}">
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+      </div>
+      {% if sidebar %}
+        <aside class="layout-sidebar">
+          {{sidebar}}
+        </aside>
+      {% endif %}
+    </section>
+
+    {# @todo: Import 'before-footer-cta' component #}
+
+    {% block footer %}
+      {% include 'partial/footer.twig' %}
+
+      {{ function('wp_footer') }}
+    {% endblock %}
+
+    {% include 'partial/js-files.twig' %}
+  </body>
+</html>

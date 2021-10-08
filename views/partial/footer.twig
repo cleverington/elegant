@@ -1,0 +1,45 @@
+<footer id="footer" class="ut-footer" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-4">
+        <a href="https://www.utexas.edu" title="University of Texas at Austin"><img class="img-fluid ut-logo--main mb-4" src="{{ site.theme.link }}/dist/images/logos/utexas-primary-horizontal-logo.svg" alt="The University of Texas at Austin"></a>
+        <p>
+          110 Inner Campus Drive<br /> Austin, Texas, 78712-3400<br /> 512-471-1232 (Phone)
+        </p>
+        {% if social_accounts %}
+          {% include 'partial/social-accounts.twig' %}
+        {% endif %}
+      </div>
+
+      {% if footer_menu %}
+        <div class="col col-md-4 col-lg-3">
+          <h4 class="ut-headline ut-h5 mb-3">{{ footer_menu.name }}</h4>
+          {% include "partial/footer-menu-item.twig" with { 'menu': footer_menu.get_items, 'menu_id': 'footer-menu' } %}
+        </div>
+      {% endif %}
+
+      {% if footer_menu_two %}
+        <div class="col col-md-4 col-lg-3">
+          <h4 class="ut-headline ut-h5 mb-3">{{ footer_menu_two.name }}</h4>
+          {% include "partial/footer-menu-item.twig" with { 'menu': footer_menu_two.get_items, 'menu_id': 'footer-menu-two' } %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="ut-footer--brand-bar py-3 text-center text-md-start">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-md-4 mb-2 mb-md-0">
+          <p class="m-0"><small>&copy; <a href="https://www.utexas.edu">The University of Texas at Austin</a> {{"now"|date('Y')}}</small></p>
+        </div>
+        <ul class="ut-footer--required-links col-sm-12 col-md mb-0 text-md-end">
+          <li><small><a href="https://emergency.utexas.edu/">Emergency Information</a> |</small></li>
+          <li><small><a href="https://www.utexas.edu/site-policies">Site Policies</a> |</small></li>
+          <li><small><a href="http://www.utexas.edu/web-accessibility-policy">Web Accessibility Policy</a> |</small></li>
+          <li><small><a href="http://www.utexas.edu/web-privacy-policy">Web Privacy Policy</a></small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

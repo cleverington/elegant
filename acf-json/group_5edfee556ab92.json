@@ -1,0 +1,302 @@
+{
+    "key": "group_5edfee556ab92",
+    "title": "Component: Promo Repeater",
+    "fields": [
+        {
+            "key": "field_5ee7977158378",
+            "label": "Group Headline",
+            "name": "group_headline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 128
+        },
+        {
+            "key": "field_5ef69a5301d1f",
+            "label": "Heading Type",
+            "name": "heading_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ee7977158378",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "H1",
+                "2": "H2",
+                "3": "H3",
+                "4": "H4",
+                "5": "H5",
+                "6": "H6"
+            },
+            "default_value": 2,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5edfee64c34e9",
+            "label": "Layout",
+            "name": "layout",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "four_column": "Four-Squares, Side-by-Side",
+                "full_width": "Full-Width",
+                "three_up": "Three in a Row",
+                "icon_boxes": "Icon Boxes",
+                "promo_units": "Promo Units"
+            },
+            "default_value": "four_column",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ef69cd401d23",
+            "label": "Entry Text",
+            "name": "entry_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 500
+        },
+        {
+            "key": "field_5ef69b1401d20",
+            "label": "Alignment",
+            "name": "alignment",
+            "type": "select",
+            "instructions": "See https:\/\/getbootstrap.com\/docs\/4.5\/utilities\/flex\/#align-items for info.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "align-items-start": "Align Items Top",
+                "align-items-center": "Align Items Center",
+                "align-items-end": "Align Items Bottom",
+                "align-items-stretch": "Align Items Stretch"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ef69b9201d21",
+            "label": "Justify",
+            "name": "justify",
+            "type": "select",
+            "instructions": "See https:\/\/getbootstrap.com\/docs\/4.5\/utilities\/flex\/#justify-content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "justify-content-start": "Justify Left",
+                "justify-content-center": "Justify Center",
+                "justify-content-end": "Justify Right",
+                "justify-content-between": "Justify to Sides and Middle",
+                "justify-content-around": "Justify Equally Spread Out"
+            },
+            "default_value": "justify-content-start",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ee0ee4c64503",
+            "label": "Promo Repeater Group",
+            "name": "promo_repeater_group",
+            "type": "repeater",
+            "instructions": "Add a new individual <strong>Promo Repeater Item<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5edfef3fc34eb",
+            "min": 1,
+            "max": 18,
+            "layout": "block",
+            "button_label": "Add Promo Repeater Item",
+            "sub_fields": [
+                {
+                    "key": "field_5edfeef4c34ea",
+                    "label": "Promo Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "<strong>Image Sizing:<\/strong>\r\n<ul>\r\n<li><strong>Four Column: <\/strong>240 x 240.<\/li>\r\n<li><strong>Full-Width: <\/strong>Image size.<\/li>\r\n<li><strong>Three-Up: <\/strong>64 x 64.<\/li>\r\n<\/ul>",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5edfee64c34e9",
+                                "operator": "!=",
+                                "value": "icon_boxes"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 50,
+                    "min_height": 50,
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": 7,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5edfef3fc34eb",
+                    "label": "Heading",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 96
+                },
+                {
+                    "key": "field_5edfef75c34ec",
+                    "label": "WYSIWYG",
+                    "name": "wysiwyg",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5edfef96c34ed",
+                    "label": "CTA Link",
+                    "name": "cta_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_6150db772e858",
+            "label": "Group Link",
+            "name": "group_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/promo-repeater"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1632694254
+}

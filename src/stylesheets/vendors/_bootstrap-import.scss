@@ -1,0 +1,75 @@
+// ----------
+// Bootstrap
+// ----------
+
+//
+// Main Bootsrap File
+// ----------
+// @import 'node_modules/bootstrap/scss/bootstrap';
+
+//
+// Bootstrap grid
+// ---------
+@import 'node_modules/bootstrap/scss/bootstrap-grid';
+
+//
+// Bootsrap Utilities
+// ----------
+@import 'node_modules/bootstrap/scss/bootstrap-utilities';
+
+//
+// Bootstrap Functions, Variables, and Mixins
+// ----------
+// @import 'node_modules/bootstrap/scss/functions';
+// @import 'node_modules/bootstrap/scss/variables';
+// @import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/root';
+@import 'node_modules/bootstrap/scss/reboot';
+
+//
+// Bootstrap Helpers
+// ----------
+@import 'node_modules/bootstrap/scss/helpers';
+
+//
+// Bootstrap Typography
+// ----------
+@import 'node_modules/bootstrap/scss/type';
+
+//
+// Bootstrap Responsive Images
+// ----------
+@import 'node_modules/bootstrap/scss/images';
+
+//
+// General Bootstrap Components
+// ----------
+// @import 'node_modules/bootstrap/scss/code'; (Not in Bootstrap 5)
+// @import 'node_modules/bootstrap/scss/grid';
+// @import 'node_modules/bootstrap/scss/containers';
+@import 'node_modules/bootstrap/scss/tables';
+// @import 'node_modules/bootstrap/scss/forms';
+@import 'node_modules/bootstrap/scss/buttons';
+@import 'node_modules/bootstrap/scss/transitions';
+@import 'node_modules/bootstrap/scss/dropdown';
+@import 'node_modules/bootstrap/scss/button-group';
+// @import 'node_modules/bootstrap/scss/input-group';
+// @import 'node_modules/bootstrap/scss/custom-forms'; (Not in Bootstrap 5)
+@import 'node_modules/bootstrap/scss/nav';
+@import 'node_modules/bootstrap/scss/navbar';
+@import 'node_modules/bootstrap/scss/card';
+// @import 'node_modules/bootstrap/scss/breadcrumb';
+// @import 'node_modules/bootstrap/scss/pagination';
+@import 'node_modules/bootstrap/scss/badge';
+// @import 'node_modules/bootstrap/scss/jumbotron'; (Not in Bootstrap 5)
+// @import 'node_modules/bootstrap/scss/alert';
+// @import 'node_modules/bootstrap/scss/progress';
+// @import 'node_modules/bootstrap/scss/media'; (Not in Bootstrap 5)
+@import 'node_modules/bootstrap/scss/list-group';
+// @import 'node_modules/bootstrap/scss/close';
+@import 'node_modules/bootstrap/scss/modal';
+// @import 'node_modules/bootstrap/scss/tooltip';
+// @import 'node_modules/bootstrap/scss/popover';
+// @import 'node_modules/bootstrap/scss/carousel';
+// @import 'node_modules/bootstrap/scss/utilities';
+// @import 'node_modules/bootstrap/scss/print'; (Not in Bootstrap 5)

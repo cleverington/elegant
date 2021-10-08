@@ -1,0 +1,30 @@
+{% set alignment = promo_repeater.alignment %}
+{% set justify = promo_repeater.justify %}
+
+<div class="promo-repeater--icon-box">
+  <div class="row my-2">
+    {% if promo_repeater.group_headline %}
+      <h{{container_heading_type}} class="col-sm-12 my-4" id="{{ promo_repeater.group_headline | lower | sanitize }}">{{ promo_repeater.group_headline }}</h{{container_heading_type}}>
+      {% set container_heading_type = container_heading_type + 1 %}
+    {% elseif overall_headline and promo_repeater.group_headline == null %}
+      {% set container_heading_type = ( content.heading_type + 1 ) %}
+    {% else %}
+      {# Default stand-alone heading as H3, if no overall headline and/or group headline set. #}
+      {% set container_heading_type = 3 %}
+    {% endif %}
+
+    <div class="d-flex flex-wrap {{alignment}} {{justify}}">
+      {% for repeater_item in promo_repeater.promo_repeater_group %}
+        {% set image = Image(repeater_item.image) %}
+        <div class="col-sm-12 col-md-6 align-items-center py-3 px-5 px-md-2 py-md-2 mb-3">
+          <div class="card bg-primary h-100 p-1 rounded-lg">
+            <a class="card-body px-5 py-4" target="{{ repeater_item.cta_link.target }}" href="{{ repeater_item.cta_link.url }}" title="{{ repeater_item.cta_link.title }}">
+              <h{{container_heading_type}} class="ut-h2 card-title">{{ repeater_item.heading }}</h{{container_heading_type}}>
+              <div class="lead pr-5">{{ repeater_item.wysiwyg }}</div>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

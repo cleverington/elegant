@@ -1,0 +1,13 @@
+{#
+  /**
+	 * Block: Example
+	 *
+	 * @param string content is a text string.
+	 */
+#}
+
+{% if is_preview %}
+	{# Add preview theming. #}
+{% endif %}
+
+<h1>{{ content.content }}</h1>

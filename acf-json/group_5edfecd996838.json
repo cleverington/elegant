@@ -1,0 +1,172 @@
+{
+    "key": "group_5edfecd996838",
+    "title": "Component: WYSIWYG Field",
+    "fields": [
+        {
+            "key": "field_5ef2115fa8bcb",
+            "label": "Overall WYSIWYG Headline",
+            "name": "overall_wysiwyg_headline",
+            "type": "text",
+            "instructions": "<strong>Optional<\/strong> <em>H2<\/em> headline field for the entire WYSIWYG Repeater area.<br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 128
+        },
+        {
+            "key": "field_5ef8f6bc76c58",
+            "label": "Heading Type",
+            "name": "heading_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2": "Heading 2",
+                "3": "Heading 3",
+                "4": "Heading 4"
+            },
+            "default_value": 2,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5ee0edc2ee5a6",
+            "label": "WYISYWG Field",
+            "name": "wysiwyg_field",
+            "type": "repeater",
+            "instructions": "Each individual <em>WYSIWYG<\/em> field has an optional headline <em>(as an H3)<\/em>, and allows for different Bootstrap-based column layouts.<br><br>\r\n\r\n<strong>Usage:<\/strong> In order to have two side-by-side WYSIWYG boxes, for example, create two WYSIWYG columns and select 'Two Column' for both layouts.<br><br>\r\n\r\n<strong>Layout:<\/strong><br>\r\nFull-width: small-12 medium-12 large-12<br>\r\nTwo Column: small-12 medium-6 large-6<br>\r\nThree Column: small-12 medium-6 large-4<br>\r\nFour Column: small-12 medium-6 large-3<br>\r\nTwo-Thirds Area (Nine-Column): small-12 medium-8 large-9<br>\r\nOne-Third Area (Three Column): small-12 medium-4 large-3<br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5ee0052b3dcda",
+            "min": 1,
+            "max": 18,
+            "layout": "block",
+            "button_label": "Add WYSIWYG Column",
+            "sub_fields": [
+                {
+                    "key": "field_5ee3d072fbe24",
+                    "label": "Layout",
+                    "name": "layout",
+                    "type": "select",
+                    "instructions": "Column layout for the individual WYSIWYG boxes.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "col-sm-12 col-md-12 col-lg-12": "Full Width",
+                        "col-sm-12 col-md-6 col-lg-6": "Two Column",
+                        "col-sm-12 col-md-6 col-lg-4": "Three Column",
+                        "col-sm-12 col-md-6 col-lg-3": "Four Column",
+                        "col-sm-12 col-md-8 col-lg-9": "Nine Column (2\/3)",
+                        "col-sm-12 col-md-4 col-lg-3": "Three Column (1\/3)"
+                    },
+                    "default_value": "col-sm-12 col-md-12 col-lg-12",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5ee0052b3dcda",
+                    "label": "Headline",
+                    "name": "headline",
+                    "type": "text",
+                    "instructions": "<strong>Optional<\/strong> individual <em>H3<\/em> headline field for an individual WYSIWYG content column.<br>",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 70
+                },
+                {
+                    "key": "field_5edfed38ee0be",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": false,
+    "description": "",
+    "modified": 1632012806
+}

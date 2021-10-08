@@ -1,0 +1,18 @@
+// Bootstrap List Group Customizations
+//   See 'node_modules/bootstrap/scss/list-group';
+// ------------
+
+.list-group-item {
+	&.active,
+	&.list-group-item-primary {
+		background-color: $ut-burntorange;
+		border-color: $ut-burntorange;
+		color: $ut-white;
+	}
+
+	&.list-group-item-secondary {
+		background-color: $ut-white;
+		border-color: $ut-burntorange;
+		color: $ut-burntorange;
+	}
+}

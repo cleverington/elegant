@@ -1,0 +1,11 @@
+{% set feed_blocks = content %}
+
+{% set tag_block = content.show_tag_area %}
+
+{% if feed_blocks.layout_selection == 'default' %}
+	{% include 'inc/Block/Feedblock/views/feed-blocks/three-up.twig' %}
+{% elseif feed_blocks.layout_selection == 'showcase' %}
+	{% include 'inc/Block/Feedblock/views/feed-blocks/big-one-small-two.twig' %}
+{% elseif feed_blocks.layout_selection == 'four_column' %}
+	{% include 'inc/Block/Feedblock/views/feed-blocks/four-column.twig' %}
+{% endif %}

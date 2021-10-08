@@ -1,0 +1,114 @@
+//
+// Variables For Colors.
+//
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+/// For a 10% tint, use tint($var, 10%);
+@function tint($color, $percentage) {
+	@return mix(white, $color, (100% - $percentage));
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+/// For a 10% shade, use shade($var, 10%);
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+// ----------
+// Primary Palette
+$ut-burntorange: #bf5700;
+$ut-charcoal: #333f48;
+$ut-white: #fff;
+
+// ----------
+// Secondary Colors
+$ut-bluebonnet: #005f86;
+$ut-turquoise: #00a9b7;
+$ut-turtlepond: #579d42;
+$ut-cactus: #a6cd57;
+$ut-shade: #9cadb7;
+$ut-tangerine: #f8971f;
+$ut-limestone: #d6d2c4;
+$ut-sunshine: #ffd600;
+
+// ----------
+// Web only utility colors
+$ut-error_red: #cd2026;
+
+// ----------
+// Tints and Shades of the Palette
+// Color changes should only make 10% jumps.
+// Example: Background t20 + background t30.
+$ut-bluebonnet--s20: #074d6a;
+
+$ut-turquoise--s20: #138791;
+
+// UT Shade Variants
+$ut-shade--t10: #f5f7f8;
+$ut-shade--t15: #f0f3f4;
+$ut-shade--t20: #f9fafb; // Correct Hex: #EBEFF1
+$ut-shade--t25: #e6eaed;
+$ut-shade--t30: #e1e6e9;
+$ut-shade--t40: #e6ebed; // Correct Hex: #D7DEE2
+$ut-shade--t50: #cdd6db;
+$ut-shade--t60: #c4cdd4;
+$ut-shade--t70: #b9c5cc;
+$ut-shade--t75: tint($ut-shade, 75%);
+$ut-shade--t80: tint($ut-shade, 80%);
+$ut-shade--t90: #a5b5be;
+
+$ut-shade--s20: #7d8a92;
+$ut-shade--s40: #5e686e;
+$ut-shade--s60: #3e4549;
+
+$ut-turtlepond--s20: #487d39;
+
+$ut-cactus--s20: shade($ut-cactus, 40%);
+
+// UT Burnt Orange Alternatives
+// Do not tint or shade.
+// Speak with University Communications for variants.
+$ut-burntorange--s10: #ae4f00;
+$ut-burntorange--s20: #9d4700;
+
+// UT Charcoal Variants
+$ut-charcoal--t10: #eaebec;
+$ut-charcoal--t15: #e0e2e3;
+$ut-charcoal--t20: #ebeced; // Correct Hex: #d6d8da;
+$ut-charcoal--t25: #cbced1;
+$ut-charcoal--t30: #c1c5c7;
+$ut-charcoal--t40: #c2c5c8; // Correct Hex: #ADB2B5;
+$ut-charcoal--t50: #989ea3;
+$ut-charcoal--t60: #858c91; // Correct Hex: #848B91;
+$ut-charcoal--t70: #6f787e;
+$ut-charcoal--t75: #666f76;
+$ut-charcoal--t80: #5b656c; // Correct Hex: #5B656C;
+$ut-charcoal--t85: tint($ut-charcoal, 85%);
+$ut-charcoal--t90: #475159;
+
+$ut-charcoal--s40: #1f262b;
+
+$ut-limestone--t10: #fbfbf9;
+$ut-limestone--t15: #f9f8f6;
+$ut-limestone--t20: #fbfbf9; // Correct Hex: #F7F6F3;
+$ut-limestone--t25: #f5f4f0;
+$ut-limestone--t30: #f3f1ed;
+$ut-limestone--t40: #f2f1ed; // Correct Hex: #EFEDE7;
+$ut-limestone--t50: #eae8e1;
+$ut-limestone--t60: #e6e4dc;
+$ut-limestone--t70: #e2dfd5;
+$ut-limestone--t75: #e0ddd3;
+$ut-limestone--t80: #dedbcf;
+$ut-limestone--t90: #dad6c9;
+
+$ut-limestone--s20: #aba89e;
+$ut-limestone--s40: #807e76;
+$ut-limestone--s60: #56544e;

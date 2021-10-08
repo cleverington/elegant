@@ -1,0 +1,90 @@
+{#
+/**
+* @file
+* Custom theme implementation for the 'Big One, Small Two' variant of the
+*   'Feed Block' component.
+*
+ * Available Variables:
+ * - feed_blocks
+ *   - block_title: string - Overall block title.
+ *   - hide_block_title: boolean - Displays (or hides) the block title from view.
+ *   - feed_block: Repeater Group of gathered Post().
+ *     - thumbnail: media - Thumbnail (featured image) field for Feed Block.
+ *     - link: link - The 'link' field for the post.
+ *     - title: string - The 'title' field for the post.
+ *	   -
+ *  - group_link: link - Overall 'link' field for the Component.
+ *  - custom_classes: string - Overall 'CSS Class' field for Component.
+*/
+#}
+
+{% set text_color = 'text-ut-charcoal' %}
+{% if 'bg-ut-burntorange' in content.custom_classes|split(' ') %}
+	{% set text_color = 'text-white' %}
+{% endif %}
+
+<section class="feed-blocks {{ content.custom_classes }} ut-block-{{ id_of_block }}">
+	<div class="container">
+		<div class="">
+			<div class="row my-2">
+				<h2 class="{{ text_color }} {{ feed_blocks.hide_block_title ? 'ut-sr-only' : '' }} pt-2">{{ feed_blocks.block_title }}</h2>
+				<div class="d-flex flex-wrap {{ feed_blocks.hide_block_title ? 'pt-4' : '' }}">
+					{% for feed_blocks in content %}
+						{% for feed_block in Post(feed_blocks) %}
+							{% set image = feed_block.thumbnail %}
+							{% if loop.first %}
+								<div class="col-sm-12 col-md-8 mb-3 pt-2">
+									<div class="">
+										<img src="{{ image.src|resize(500,300) }}" class="ut-img--fluid w-100" alt="{{ image.alt }}" />
+										<div class="my-3">
+											<a class="stretched-link" target="" href="{{ feed_block.link }}" title="Read about {{ feed_block.title }}">
+												{% if tag_block %}
+													{% include 'components/feed-blocks/show-tag-area.twig' %}
+												{% endif %}
+												<p class="mb-2 small post-date text-uppercase {{ text_color }}">{{ feed_block.date('M d, Y') }}</p>
+												<h3 class="card-title text-weight-600 mt-2 {{ text_color }}">
+													{{ feed_block.title }}
+												</h3>
+												{% if feed_block.subtitle or feed_block.post_excerpt %}
+													<div class="ut-h5 {{ text_color }}">{{ feed_block.subtitle ?: feed_block.post_excerpt }}</div>
+												{% endif %}
+											</a>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					<div class="col-sm-12 col-md-4 mb-3 pt-2 row no-gutters">
+						{% for feed_blocks in content %}
+							{% for feed_block in Post(feed_blocks)[1:] %}
+								{% set image = feed_block.thumbnail %}
+								<div class="col-12">
+									<img src="{{ image.src|resize(500,300) }}" class="ut-img--fluid w-100" alt="{{ image.alt }}" />
+									<div class="my-3">
+										<a class="stretched-link" target="" href="{{ feed_block.link }}" title="Read about {{ feed_block.title }}">
+											{% if tag_block %}
+												{% include 'components/feed-blocks/show-tag-area.twig' %}
+											{% endif %}
+											<p class="mb-2 small post-date text-uppercase {{ text_color }}">{{ feed_block.date('M d, Y') }}</p>
+											<h3 class="card-title ut-h5 text-weight-600 mt-2 {{ text_color }}">
+												{{ feed_block.title }}
+											</h3>
+										</a>
+									</div>
+								</div>
+							{% endfor %}
+						{% endfor %}
+					</div>
+					{% if content.group_link %}
+						<p class="col-12 align-items-center text-center">
+							<a class="ut-btn" target="{{ content.group_link.target }}" href="{{ content.group_link.url }}" title="{{ content.group_link.title }}">
+								{{ content.group_link.title }}
+							</a>
+						</p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

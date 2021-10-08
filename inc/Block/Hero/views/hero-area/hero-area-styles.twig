@@ -1,0 +1,20 @@
+<style>
+	.ut-hero.ut-block-{{ id_of_block }} {
+		background-image: url('{{ image.src|resize(600) }}');
+	}
+	@media screen and (min-width: 600px) {
+		.ut-hero.ut-block-{{ id_of_block }} {
+			background-image: url('{{ image.src|resize(900) }}');
+		}
+	}
+	@media screen and (min-width: 900px) {
+		.ut-hero.ut-block-{{ id_of_block }} {
+			background-image: url('{{ image.src|resize(1200) }}');
+		}
+	}
+	@media screen and (min-width: 1200px) {
+		.ut-hero.ut-block-{{ id_of_block }} {
+			background-image: url('{{ image.src|resize(1600) }}');
+		}
+	}
+</style>

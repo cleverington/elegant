@@ -1,0 +1,26 @@
+{% set promo_repeater = content %}
+{% set overall_headline = content.overall_headline %}
+{% set heading = content.heading %}
+{% set entry_text = content.entry_text %}
+
+{% if overall_headline %}
+  {% set container_heading_type = ( content.heading_type + 1 ) %}
+{% else %}
+  {% set container_heading_type = 2 %}
+{% endif %}
+
+<section class="promo-repeater {{ content.custom_classes }}">
+  <div class="container">
+    {% if promo_repeater.layout == 'four_column' %}
+      {% include 'inc/Block/Promorepeater/views/promo-repeater/four-column.twig' %}
+    {% elseif promo_repeater.layout == 'full_width' %}
+      {% include 'inc/Block/Promorepeater/views/promo-repeater/full-width.twig' %}
+    {% elseif promo_repeater.layout == 'three_up' %}
+      {% include 'inc/Block/Promorepeater/views/promo-repeater/three-up.twig' %}
+    {% elseif promo_repeater.layout == 'icon_boxes' %}
+      {% include 'inc/Block/Promorepeater/views/promo-repeater/icon-boxes.twig' %}
+    {% elseif promo_repeater.layout == 'promo_units' %}
+      {% include 'inc/Block/Promorepeater/views/promo-repeater/promo-units.twig' %}
+    {% endif %}
+  </div>
+</section>

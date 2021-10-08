@@ -1,0 +1,9 @@
+{% if primary_menu %}
+		<ul class="main-menu__list--subnav dropdown-menu" aria-labelledby="navbarDropdown{{ nav_item.id }}">
+		{% for child_item in children %}
+			<li class="main-menu__list-item--subnav {{ child_item.classes | join(' ') }}">
+				<a class="main-menu__link--subnav" target="{{ child_item.target }}" href="{{ child_item.link }}">{{ child_item.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+{% endif %}

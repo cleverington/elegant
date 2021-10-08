@@ -1,0 +1,52 @@
+{#
+/**
+* @file
+* Custom theme implementation for the 'Hero Area - Layout 3' variant of the
+*   'Hero Area' component.
+*
+ * Available Variables:
+ * - id_of_block: int - Counter for Flex-Content block-order.
+ * - hero_area
+ *   - image: object (media) - Image object for background
+ *     - alt: string - Alt Text for Image
+ *     - title: string - Title text for Image
+ *   - headline: string - H1 based text headline
+ *   - subheader: string - Text subheadline.
+ *   - cta_button: object (link)
+ *     - url: string - Hyperlink url of Hero-CTA button.
+ *     - title: string - Title of Hero-CTA button
+ *     - target: string - Destination for the Hero-CTA button.
+ *	   -
+ *  - group_link: link - Overall 'link' field for the Component.
+ *  - custom_classes: string - Overall 'CSS Class' field for Component.
+*/
+#}
+
+<section class="ut-hero hero--photo-white-notch mb-1 ut-block-{{ id_of_block }}">
+  {% include 'inc/Block/Hero/views/hero-area/hero-area-styles.twig' %}
+  <div class="hero-img">
+    <span class="ut-sr-only">{{ image.alt ? image.alt : image.title }}</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-callout">
+      <div class="row w-100">
+        <div class="col-12 col-md-10">
+          <div class="hero-headline">
+            <h1 class="mb-1">{{ hero_area.headline ? hero_area.headline : post.title }}</h1>
+          </div>
+          {% if hero_area.subheader %}
+            <span class="hero-subhead">{{ hero_area.subheader }}</span>
+          {% endif %}
+        </div>
+        {% if hero_area.cta_button %}
+          <div class="col-12 col-md text-md-right">
+            <div class="hero-cta">
+              <a href="{{ hero_area.cta_button.url }}" title="{{ hero_area.cta_button.title }}" target="{{ hero_area.cta_button.target }}" class="ut-btn">{{ hero_area.cta_button.title }}</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
