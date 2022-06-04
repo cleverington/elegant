@@ -1,10 +1,63 @@
+# Packages #
+########################
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+!wp-includes/**/*.gz
+
+# Logs and databases #
+########################
+*.log
+*.sql
+
+# OS generated files #
+########################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+########################
+*.un~
 .idea
-.DS_Store
-/node_modules/
-/vendor/
-/wpcs/
+
+# SASS #
+########################
+.sass-cache
+
+##########################
+### Ignore Build Files ###
+##########################
+js/scripts.js
+js/scripts.min.js
+styles/css/*
+
+##########################
+### START CUSTOM RULES ###
+##########################
+
+# Local Assets #
+########################
+vendor
+node_modules
+_assets
+
+# htaccess #
+########################
+# This wasn't ignored by default,
+# but it seems like it should be.
+.htaccess
 
 _dist/
 static/fonts/
 static/images/
-dist/css/border-beagle.css
+dist/css/main.css

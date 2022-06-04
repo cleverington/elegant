@@ -205,6 +205,11 @@ class Theme {
 	public function add_to_context( array $context ) : array {
 		global $wp;
 
+		// Add the 'Options' to Context, if present.
+		if ( get_fields('option') ) {
+			$context['options'] = get_fields('option');
+		}
+
 		$context['current_url'] = home_url( add_query_arg( array(), $wp->request ) );
 
 		return $context;
@@ -213,7 +218,7 @@ class Theme {
 }
 
 /**
- * Loader function for Timber Direcgtories.
+ * Loader function for Timber Directories.
  *
  * Note: Requires Component have following directory structure:
  *   - PHP: /<component-type>/<component-name>/<component>.php
