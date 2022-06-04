@@ -4,6 +4,7 @@
  *
  * @package Elegant
  * @subpackage Elegant/Plugins/ACF
+ * @todo Add validation to auto-exit if 'acf' doesn't exist.
  */
 
 namespace Elegant\Plugins;
@@ -24,6 +25,7 @@ class ACF {
 		add_filter( 'acf/location/rule_types', array( $this, 'rules_types' ) );
 		add_filter( 'acf/location/rule_values/visibility', array( $this, 'rules_values_visibility' ) );
 		add_filter( 'acf/location/rule_match/visibility', array( $this, 'rules_match_visibility' ), 10, 3 );
+		add_filter( 'acf/validate_value/type=url', array( $this, 'acf_validate_url' ) );
 
 		// Add Configuration page, if associated ACF exists.
 		// Note: Access requires 'Administrator' user-level.
@@ -43,8 +45,6 @@ class ACF {
 		}
 	}
 
-
-
 	/**
 	 * Location rules types
 	 *
@@ -59,8 +59,6 @@ class ACF {
 
 	}
 
-
-
 	/**
 	 * Location rules values visibility
 	 *
@@ -73,7 +71,6 @@ class ACF {
 
 		return $choices;
 	}
-
 
 	/**
 	 * Location rules match visibility
@@ -118,5 +115,39 @@ class ACF {
 		}
 
 		return $field;
+	}
+
+	/**
+	 * Allow ACF URL fields to accept ALL URLs
+	 * 
+	 * By default, the 'url' field doesn't accept things like 'tel:', 'mailto:',
+	 *   or '#' based urls.  This function adds functional support.
+	 * 
+	 * @see https://www.advancedcustomfields.com/resources/acf-validate_value/
+	 * @param boolean $valid true / false whether valid or not.
+	 * @param string  $value value from ACF field.
+	 * @param object  $field is the associated ACF field.
+	 * @param string  $input user's inputted telephone number.
+	 * @return boolean $valid confirms that the saved field is valid.
+	 */
+	public static function acf_validate_url( $valid, $value, $field, $input ) {
+
+		// These are strings that a possible URL can start with and still be a valid URL.
+		//   Otherwise it only accepts strings that start with 'http://' or 'https://'.
+		$valid_url_prefixes = [
+			'tel:', // Allow telephone links.
+			'mailto:', // Allow email links.
+			'#', // Allow jump/null links.
+		];
+	
+		foreach ( $valid_url_prefixes as $prefix ) {
+			if ( strpos($value, $prefix) === 0 ) {
+				// If $value (the string value from the ACF field) starts with one of
+				//   the prefixes defined above, then this is a valid URL.
+				$valid = true;
+			}
+		}
+	
+		return $valid;
 	}
 }

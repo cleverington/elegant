@@ -22,7 +22,8 @@ class Admin {
 	 */
 	public function run() {
 		add_filter( 'admin_footer_text', array( $this, 'set_admin_footer_text' ) );
-		add_action( 'admin_init', 'disable_site_comments_admin' );
+		add_action( 'admin_init', array( $this, 'disable_site_comments_admin' ) );
+		add_action('wp_head', array( $this, 'hide_wp_link_in_admin_bar') );
 	}
 
 	/**
@@ -157,5 +158,21 @@ class Admin {
 		global $wp_admin_bar;
 
 		$wp_admin_bar->remove_menu( 'comments' );
+	}
+
+	/**
+	 * Remove the Admin Bar's 'WordPress' link
+	 *
+	 * For logged in users (admins) hide the WordPress link in the admin bar.
+	 * This is a custom theme. We can act like it!
+	 *
+	 * @since 1.0.1
+	 */
+	public static function hide_wp_link_in_admin_bar() {
+		if ( is_user_logged_in() ) : ?>
+			<style>#wp-admin-bar-wp-logo{display:none}</style>
+			<?php
+		endif;
+
 	}
 }
